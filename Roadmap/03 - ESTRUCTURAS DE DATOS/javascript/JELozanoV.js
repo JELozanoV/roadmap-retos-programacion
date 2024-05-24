@@ -14,3 +14,26 @@
  * - También se debe proponer una operación de finalización del programa.
  */
 
+// Arrays
+
+// Arrays simples
+
+let numeros = [1,2,4,5,6]
+let frutas = ["Manzana","pera","Naranja"]
+
+// Arays multidimensionales 
+
+let arrNumeros = [
+    [1,2,3,4,5]
+    [5,4,3,2,1]
+]
+
+//Arrays Dispersos
+
+let numerosDispersos = []
+numerosDispersos[10] = 30 // Los 10 indices anteriores a el 10 estaran vacios 
+
+console.log(numerosDispersos);
+
+
+
