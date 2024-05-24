@@ -116,4 +116,4 @@ function retornaNumero(texto1, texto2) {
     return "El numero de veces que se han impreso los numeros es " + contador;
 }
 
-retornaNumero("Es multiplo de 3", "Es multiplo de 5");
+retornaNumero("Es multiplo de 3", "Es multiplo de 5")
