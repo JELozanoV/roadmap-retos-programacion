@@ -14,6 +14,8 @@
  * - También se debe proponer una operación de finalización del programa.
  */
 
+const { log } = require("console")
+
 // Arrays
 
 // Arrays simples
@@ -166,13 +168,13 @@ mapa.delete('edad');
  * - También se debe proponer una operación de finalización del programa. */
 
 let usuarios = [{
-    nombre:"John",
+    nombre: "John",
     telefono: 32343
 }]
 
 function buscarUsuario(dtoUser) {
     const lowerDtoUser = dtoUser.toString().toLowerCase();
-    const findUser = usuarios.find(user => 
+    const findUser = usuarios.find(user =>
         user.nombre.toLowerCase() === lowerDtoUser || user.telefono.toString() === lowerDtoUser
     );
 
@@ -181,11 +183,40 @@ function buscarUsuario(dtoUser) {
 
 console.log(buscarUsuario(32343));
 
-function insertarUsuario(name, phone){
-    const nameLower = name.toLowerCase()
-    const numero = phone.toString.length > 11 ? "No puede tener mas de 11 digitos" : phone
-    return usuarios.push({nombre: nameLower, telefono: numero})
+function insertarUsuario(name, phone) {
+    const nameLower = name.toLowerCase();
+
+    // Validar que el teléfono sea numérico y no tenga más de 11 dígitos
+    if (typeof phone !== 'number' || isNaN(phone) || phone.toString().length > 11) {
+        return "El número de teléfono debe ser numérico y tener hasta 11 dígitos.";
+    }
+
+    usuarios.push({ nombre: nameLower, telefono: phone });
+    return `Usuario ${nameLower} insertado correctamente.`;
 }
 
 insertarUsuario("Juan",)
+console.log(usuarios);
+
+
+function actualizarUsuario(dtoUser, upName, upPhone) {
+    const usuario = buscarUsuario(dtoUser)
+    if(upName){
+        usuario.nombre = upName
+    }
+    if(upPhone){
+        usuario.telefono = upPhone
+    }
+
+}
+
+function eliminaciónContacto(user){
+    const usuario = buscarUsuario(user)
+    if(usuario){
+        delete usuario
+    }
+}
+
+eliminaciónContacto("John")
+
 console.log(usuarios);
