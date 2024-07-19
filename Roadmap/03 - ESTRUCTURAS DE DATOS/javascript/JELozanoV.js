@@ -208,7 +208,7 @@ function actualizarUsuario(dtoUser, upName, upPhone) {
         usuario.telefono = upPhone
     }
 
-}
+};
 
 function eliminaciónContacto(user){
     const usuario = buscarUsuario(user)
