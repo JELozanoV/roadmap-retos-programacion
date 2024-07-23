@@ -215,7 +215,7 @@ function eliminaciónContacto(user){
     if(usuario){
         delete usuario
     }
-}
+};
 
 eliminaciónContacto("John")
 
